@@ -12,4 +12,13 @@
  */
 class JobeetJob extends BaseJobeetJob
 {
+    public function __call($method, $args)
+    {
+        // slugify してフィールドの値を取得.
+        if (preg_match('/^get(.+?)Slug$/', $method, $matches)) {
+            $next = "get{$matches[1]}";
+            return Jobeet::slugify($this->$next());
+        }
+        return parent::__call($method, $args);
+    }
 }
