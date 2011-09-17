@@ -12,7 +12,7 @@
       <div id="header">
         <div class="content">
           <h1><a href="<?php echo url_for('job/index') ?>">
-            <img src="/images/logo.jpg" alt="Jobeet Job Board" />
+            <a href="<?php echo url_for('homepage') ?>"><img src="/images/logo.jpg" alt="Jobeet Job Board" /></a>
           </a></h1>
 
           <div id="sub_header">
