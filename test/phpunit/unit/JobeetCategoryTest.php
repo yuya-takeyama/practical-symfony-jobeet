@@ -3,15 +3,9 @@ require_once dirname(__FILE__).'/../bootstrap/unit.php';
 
 class unit_JobeetCategoryTest extends sfPHPUnitBaseTestCase
 {
-    /**
-     * @test
-     */
-    public function getSlug_slugifyされたカテゴリ名を取得する()
+    public function testNothing()
     {
-        $category = $this->createCategory(array(
-            'name' => 'Web Programmer',
-        ));
-        $this->assertSame('web-programmer', $category->getSlug());
+        // No tests exist.
     }
 
     /**
