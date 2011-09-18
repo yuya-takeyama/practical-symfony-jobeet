@@ -8,12 +8,15 @@ class functional_frontend_jobActionsTest extends sfPHPUnitBaseFunctionalTestCase
         return 'frontend';
     }
 
-    public function testDefault()
+    /**
+     * @test
+     */
+    public function ホームページはJobの一覧である()
     {
         $browser = $this->getBrowser();
 
         $browser->
-            get('/job')->
+            get('/')->
 
         with('request')->begin()->
             isParameter('module', 'job')->
