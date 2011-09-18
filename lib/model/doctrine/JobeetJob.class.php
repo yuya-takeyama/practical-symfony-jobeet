@@ -31,7 +31,7 @@ class JobeetJob extends BaseJobeetJob
             $now = $this->getCreatedAt() ?
                 $this->getDateTimeObject('created_at')->format('U') :
                 time();
-            $this->setExpiresAt(date('Y-m-d H:i:s', $now + 86400 * sfConfig::get('app_active_days')));
+            $this->setExpiresAt(date('Y-m-d H:i:s', $now + 86400 * 30));
         }
 
         return parent::save($conn);
