@@ -21,4 +21,19 @@ class JobeetJob extends BaseJobeetJob
         }
         return parent::__call($method, $args);
     }
+
+    /**
+     * レコードの保存.
+     */
+    public function save(Doctrine_Connection $conn = NULL)
+    {
+        if ($this->isNew() && ! $this->getExpiresAt()) {
+            $now = $this->getCreatedAt() ?
+                $this->getDateTimeObject('created_at')->format('U') :
+                time();
+            $this->setExpiresAt(date('Y-m-d H:i:s', $now + 86400 * 30));
+        }
+
+        return parent::save($conn);
+    }
 }
